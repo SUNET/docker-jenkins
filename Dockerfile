@@ -25,6 +25,7 @@ USER jenkins
 # hsts-filter-plugin is to enable a hsts header. Stops anything from trying to talk http with jenkins.
 # github-oauth is whats used in prod to auth users against github.
 # ansicolor is to produce colors and correct interpetation of ansi-codes in build logs
-RUN /usr/local/bin/install-plugins.sh pam-auth git-client ant matrix-auth script-security cloudbees-folder job-dsl envinject slack git github copyartifact managed-scripts publish-over-ssh ws-cleanup docker-plugin configuration-as-code greenballs locale hsts-filter-plugin github-oauth ansicolor
 # workflow-aggregator is "pipeline", the new way of writing jenkins jobs.
 # authorize-project is needed to set which user to run jobdsl as, when running in secure sandbox
+# pipeline-utility-steps is extra steps to use in pipeline, such as readYaml
+RUN /usr/local/bin/install-plugins.sh pam-auth git-client ant matrix-auth script-security cloudbees-folder job-dsl envinject slack git github copyartifact managed-scripts publish-over-ssh ws-cleanup docker-plugin configuration-as-code greenballs locale hsts-filter-plugin github-oauth ansicolor workflow-aggregator authorize-project pipeline-utility-steps
