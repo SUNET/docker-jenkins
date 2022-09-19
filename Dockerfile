@@ -2,9 +2,6 @@ FROM jenkins/jenkins:lts-jdk11
 
 USER root
 
-# Use swedish mirror
-RUN /bin/sed -i s/deb.debian.org/ftp.se.debian.org/g /etc/apt/sources.list
-
 # Upgrade base os packages
 RUN apt-get update \
     && apt-get -y dist-upgrade \
